@@ -161,3 +161,49 @@ Search and install the following:
 * Go (ms-vscode.go)
 * Docker (peterjausovec.vscode-docker)
 
+### [Chrome](https://ubunlog.com/google-chrome-ubuntu-1804/)
+
+Install Chrome:
+
+```
+sudo add-apt-repository 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' 
+curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo apt update
+sudo apt install google-chrome-stable
+```
+
+TODO: install and setup react/redux dev tools (and more?)
+
+
+## Ofice Tools
+
+### Zoom
+
+Go to https://zoom.us/support/download and follow instructions.
+
+### [Slack](https://linuxconfig.org/how-to-install-slack-on-ubuntu-18-04-bionic-beaver-linux)
+
+```
+sudo snap install slack --classic
+```
+
+### [Spotify](https://www.spotify.com/es/download/linux/)
+
+```
+sudo snap install spotify
+```
+
+
+## Sysadmin Tools
+
+### Networking
+
+```
+sudo apt install whois
+```
+
+
+* lvm checks
+* backup state
+* set desktop photos
+* tmux or screen or such....
