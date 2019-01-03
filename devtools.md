@@ -3,6 +3,17 @@
 Set up useful visual development tools...
 currently focused on web development, and more as needed
 
+## Github
+
+Log into github and go to https://github.com/settings/keys
+
+```
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+```
+
+Click "New SSH key" and paste the key from above
+
 ## VSCode
 
 Go to https://code.visualstudio.com/Download and click on `.deb` download
@@ -56,6 +67,10 @@ At least one with work passwords, one for personal use, and one for react dev to
 Activate the "react dev" persona
 
 **TODO**: install and setup react/redux dev tools (and more?)
+
+## Keybase
+
+**TODO**
 
 ## Virtualbox
 

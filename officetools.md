@@ -1,17 +1,5 @@
 
-### Github
-
-Log into github and go to https://github.com/settings/keys
-
-```
-ssh-keygen
-cat ~/.ssh/id_rsa.pub
-```
-
-Click "New SSH key" and paste the key from above
-
-
-# Ofice Tools
+# Office Tools
 
 ## Zoom
 
