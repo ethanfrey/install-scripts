@@ -8,4 +8,5 @@ be useful to others...
 * [Toolchain](./toolchain.md)
 * [Dev Tools](./devtools.md)
 * [Office Tools](./officetools.md)
+* [Services](./services.md)
 * [Sysadmin](./sysadmin.md)
