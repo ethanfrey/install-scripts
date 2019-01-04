@@ -2,14 +2,21 @@
 
 Set up basic build toolchains for git, golang, node, docker, python (and more?)
 
-### Git
+## Git
 
+Set up for commits:
 ```
 git config --global user.email ethanfrey@users.noreply.github.com
 git config --global user.name 'Ethan Frey'
 ```
 
-### Golang (1.10)
+Add some helpers (to ~/.bashrc)
+
+```
+alias glog='git log --oneline --graph'
+```
+
+## Golang (1.10)
 
 Install package and set variables:
 ```
@@ -24,9 +31,14 @@ EOF
 Add basic tools:
 ```
 go get github.com/golang/dep/cmd/dep
+go get github.com/mdempsky/gocode
+go get github.com/uudashr/gopkgs/cmd/gopkgs
+go get golang.org/x/tools/cmd/goimports
+go get github.com/sqs/goreturns
+go get github.com/rogpeppe/godef
 ```
 
-### Node - [nvm](https://github.com/creationix/nvm)
+## Node - [nvm](https://github.com/creationix/nvm)
 
 Install nvm:
 ```
@@ -46,7 +58,7 @@ nvm install lts/dubnium
 npm install -g yarn
 ```
 
-### [Docker CE](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+## [Docker CE](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -62,7 +74,7 @@ sudo usermod -aG docker ${USER}
 ```
 
 
-### Python (2 and 3 with virtualenv)
+## Python (2 and 3 with virtualenv)
 
 Python3 is installed by default, let's add 2...
 
@@ -77,7 +89,7 @@ And add a few extra packages to 3 as well...
 sudo apt install python3-dev python3-pip
 ```
 
-### Other useful build tools
+## Other useful build tools
 
 To compile usb support (eg. node-hid)
 
