@@ -2,7 +2,7 @@
 
 ## Networking
 
-```
+```shell
 sudo apt install whois net-tools
 ```
 

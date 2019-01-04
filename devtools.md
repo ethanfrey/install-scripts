@@ -7,7 +7,7 @@ currently focused on web development, and more as needed
 
 Log into github and go to https://github.com/settings/keys
 
-```
+```shell
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
@@ -20,7 +20,7 @@ Go to https://code.visualstudio.com/Download and click on `.deb` download
 
 ### Add support for big workspaces
 
-```
+```shell
 echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
@@ -29,7 +29,7 @@ sudo sysctl -p
 
 Start VSCode:
 
-```
+```shell
 code
 ```
 
@@ -81,7 +81,7 @@ Search and install the following:
 
 Install Chrome:
 
-```
+```shell
 sudo add-apt-repository 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' 
 curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt update
