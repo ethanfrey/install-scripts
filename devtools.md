@@ -41,10 +41,41 @@ Search and install the following:
 * Typescript TsLint Plugin (ms-vscode.vscode-typescript-tslint-plugin)
 * Go (ms-vscode.go)
 * Docker (peterjausovec.vscode-docker)
+* Open in Github (fabiospampinato.vscode-open-in-github)
+* Better TOML (bungcip.better-toml)
 
-### Customize Keybindings
+### [Customize Keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)
 
-**TODO**
+* Type `Ctrl+k Ctrl+S` to open keyboard shortcuts.
+* Click on `keybindings.json`
+* Copy in the following set (some basic customizations):
+
+```json
+[
+    // ctrl+a goes to line beginning
+    { "key": "ctrl+a",                  "command": "cursorHome",
+        "when": "textInputFocus" },
+    { "key": "ctrl+shift+a",            "command": "cursorHomeSelect",
+        "when": "textInputFocus" },
+
+    // and redefine alt+a for select all
+    { "key": "alt+a",                "command": "editor.action.selectAll",
+        "when": "textInputFocus" },
+    { "key": "alt+a",                "command": "editor.action.webvieweditor.selectAll",
+        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'" },
+    { "key": "alt+a",                "command": "editor.action.webvieweditor.selectAll",
+        "when": "!editorFocus && !inputFocus && activeEditor == 'workbench.editor.htmlPreviewPart'" },
+    { "key": "alt+a",                "command": "list.selectAll",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus" },
+
+    // ctrl+e is end of line (currently same as ctrl+p)
+    { "key": "ctrl+e",                   "command": "cursorEnd",
+        "when": "textInputFocus" },
+    { "key": "ctrl+shift+e",             "command": "cursorEndSelect",
+        "when": "textInputFocus" }
+]
+```
+
 
 ## [Chrome](https://ubunlog.com/google-chrome-ubuntu-1804/)
 
@@ -64,9 +95,11 @@ At least one with work passwords, one for personal use, and one for react dev to
 
 ### Add extensions
 
-Activate the "react dev" persona
+Activate the "react dev" persona, and install the following:
 
-**TODO**: install and setup react/redux dev tools (and more?)
+* [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+* [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+* [JSON View](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
 ## Keybase
 
