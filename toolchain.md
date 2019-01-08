@@ -86,12 +86,39 @@ Python3 is installed by default, let's add 2...
 ```shell
 sudo apt install python 
 sudo apt install libssl-dev libffi-dev python-dev python-pip
+sudo apt install python3-dev python3-pip
 ```
 
-And add a few extra packages to 3 as well...
+And setup [virtualenv](https://virtualenv.pypa.io/en/latest/installation/)
+and [virtualenv-wrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
 ```shell
-sudo apt install python3-dev python3-pip
+pip install virtualenv
+# do we really need this?
+pip3 install virtualenv
+# we only need this once, as it is shell-scripts, version independent
+pip install virtualenvwrapper
+
+cat << 'EOF' >> ~/.bashrc
+export PYTHONBIN=${HOME}/.local/bin
+export PATH=${PATH}:${PYTHONBIN}
+export WORKON_HOME=${HOME}/.virtualenvs
+# export PROJECT_HOME=${HOME}/Devel
+source ${PYTHONBIN}/virtualenvwrapper.sh
+EOF
+```
+
+Demo virtualenvs:
+
+```shell
+mkvirtualenv py2
+mkvirtualenv --python python3 py3
+
+workon py2
+python --version
+
+workon py3
+python --version
 ```
 
 ## Other useful build tools
