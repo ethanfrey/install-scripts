@@ -101,6 +101,45 @@ Activate the "react dev" persona, and install the following:
 * [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 * [JSON View](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
 
+## Terminal
+
+### [Fonts](http://www.webupd8.org/2010/07/7-of-best-ubuntu-terminal-fixed-width.html)
+
+```shell
+sudo apt-get install fonts-inconsolata fonts-liberation
+```
+
+### [Terminator](https://www.atareao.es/software/utilidades/terminator-un-meta-terminal-ubuntu/) - terminal emulator
+
+```shell
+# Cannot use this as insecure
+# sudo add-apt-repository ppa:gnome-terminator
+sudo apt-get update
+sudo apt-get install terminator
+```
+
+### [Configure](https://www.linuxnov.com/the-complete-guide-to-configure-terminator-terminal-emulator-layouts/):
+
+Which one terminator or default ubuntu terminal???
+
+**TODO**
+
+* Set Fonts
+* Set Colors
+* Screen layouts....
+* Shortcuts
+
+### [Tmux](https://hackernoon.com/a-gentle-introduction-to-tmux-8d784c404340)
+
+Install:
+
+```shell
+sudo apt-get install tmux
+tmux -V
+```
+
+**TODO** setup
+
 ## Keybase
 
 **TODO**
