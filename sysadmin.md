@@ -33,17 +33,23 @@ free -g
 
 [Shrink lvm](https://www.rootusers.com/lvm-resize-how-to-decrease-an-lvm-partition/) to allow space for targetted volumes, snapshots:
 
-```
-# reboot to live cd to umount root...
-DEV=/dev/centos/var
-VG=/dev/vg/disk-name
+```shell
+# this is the lv path from lvdisplay
+VG=/dev/ubuntu-vg/root
+PATH=/mnt/foo # if this is non-root, use real path here
 
-umount $DEV
-e2fsck -fy $DEV
-resize2fs $DEV 200G
+# reboot to live cd to umount root, or unmount additional path
+umount $PATH
+
+# clean, resize, reduce, resize, clean....
+e2fsck -fy $VG
+resize2fs $VG 200G
 lvreduce -L 5G $VG
-resize2fs $DEV
-mount $DEV /mnt/foo
+resize2fs $VG
+e2fsck -fy $VG
+
+# mount readonly and check again...
+mount $VG $PATH
 ```
 
 Ideas:
@@ -52,7 +58,17 @@ Take snapshots...
 Second linux os's
 
 
+
+## backup state (online)
+
 **TODO**
 
-* backup state (online)
+* http://duplicity.nongnu.org/
+* https://launchpad.net/deja-dup
+* https://www.duplicati.com/
+* http://www.rastersoft.com/programas/cronopete.html
+
+
+**TODO**
+
 * set desktop photos
