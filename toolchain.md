@@ -7,6 +7,7 @@ Set up basic build toolchains for git, golang, node, docker, python (and more?)
 Set up for commits:
 
 ```shell
+git config --global core.editor "vim"
 git config --global user.email ethanfrey@users.noreply.github.com
 git config --global user.name 'Ethan Frey'
 ```
@@ -121,10 +122,35 @@ workon py3
 python --version
 ```
 
+## Rust (with wasm)
+
+Read [rustup docs](https://github.com/rust-lang/rustup.rs/blob/master/README.md) to make sense of the toolchain.
+
+```shell
+rustup show
+rustup help
+```
+
+Taken from [substrate docs](https://github.com/paritytech/substrate#6-building):
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+rustup update nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly
+rustup update stable
+cargo install --git https://github.com/alexcrichton/wasm-gc
+```
+
 ## Other useful build tools
 
-To compile usb support (eg. node-hid)
+To compile usb support (eg. node-hid):
 
 ```shell
 sudo apt install libudev-dev libusb-1.0-0 libusb-1.0-0-dev
+```
+
+Clang and c compilation:
+
+```shell
+sudo apt install cmake pkg-config libssl-dev clang libclang-dev
 ```
