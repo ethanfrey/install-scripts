@@ -35,11 +35,14 @@ Add basic tools:
 
 ```shell
 go get github.com/golang/dep/cmd/dep
+go get github.com/derekparker/delve/cmd/dlv
+
 go get github.com/mdempsky/gocode
 go get github.com/uudashr/gopkgs/cmd/gopkgs
 go get golang.org/x/tools/cmd/goimports
 go get github.com/sqs/goreturns
 go get github.com/rogpeppe/godef
+go get github.com/ramya-rao-a/go-outline
 ```
 
 ## Node - [nvm](https://github.com/creationix/nvm)
@@ -139,6 +142,93 @@ rustup update nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 rustup update stable
 cargo install --git https://github.com/alexcrichton/wasm-gc
+```
+
+## Kubernetes
+
+Basic client side tooling and setup (`kubectl`):
+
+### [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/):
+
+with snap:
+
+```shell
+sudo snap install kubectl --classic
+```
+
+or with apt: (note this is onlu 1.13 until they add a bionic repo)
+
+```shell
+sudo apt install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt update
+sudo apt install -y kubectl
+```
+
+And ensure you have the proper version
+
+```shell
+kubectl version
+```
+
+### Add credentials and configure (for GCE)
+
+Add google compute sdk, with snap:
+
+```shell
+sudo snap install google-cloud-sdk
+```
+
+Or [apt](https://cloud.google.com/sdk/docs/downloads-apt-get):
+
+```shell
+CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt update
+sudo apt install -y google-cloud-sdk
+```
+
+Add credentials, for example "hugnet" project, listed as `iov-hugnet2` on GCE:
+
+```shell
+gcloud auth login
+gcloud container clusters get-credentials hugnet --zone europe-west1-b --project=iov-hugnet2
+kubectl config get-contexts
+kubectl config use-context gke_iov-hugnet2_europe-west1-b_hugnet
+
+gcloud projects list
+gcloud config set project iov-hugnet2
+```
+
+View you can see the config:
+
+```shell
+kubectl cluster-info
+```
+
+Example - copy data:
+
+```shell
+mkdir bns-a-0
+kubectl cp bns-a-0:/data/tendermint/data/state.db bns-a-0
+kubectl cp bns-b-0:/data/tendermint/data/state.db bns-b-0
+kubectl cp bns-c-0:/data/tendermint/data/state.db bns-c-0
+kubectl cp bns-d-0:/data/tendermint/data/state.db bns-d-0
+```
+
+And check out [more useful commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
+*TODO* local cluster/deploy environment???
+Some [instructions here](https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux)
+
+## Bash tooling
+
+Some tools to help with bash scripting
+
+```shell
+sudo apt install shellcheck
 ```
 
 ## Other useful build tools

@@ -43,6 +43,7 @@ Search and install the following:
 * Docker (peterjausovec.vscode-docker)
 * Open in Github (fabiospampinato.vscode-open-in-github)
 * Better TOML (bungcip.better-toml)
+* Editor Config (editorconfig.editorconfig)
 
 ### [Customize Keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)
 
@@ -74,6 +75,17 @@ Search and install the following:
     { "key": "ctrl+shift+e",             "command": "cursorEndSelect",
         "when": "textInputFocus" }
 ]
+```
+
+### Some custom settings...
+
+Open User Settings (JSON), with `Ctrl+Shift+P` : `Settings (JSON)`.
+And add the following lines:
+
+```json
+{
+    "go.vetFlags": ["-composites=false"]
+}
 ```
 
 
