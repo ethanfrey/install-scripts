@@ -18,6 +18,8 @@ Click "New SSH key" and paste the key from above
 
 Go to https://code.visualstudio.com/Download and click on `.deb` download
 
+Or simply install a snap: `sudo snap install code --classic`
+
 ### Add support for big workspaces
 
 ```shell
@@ -40,10 +42,12 @@ Search and install the following:
 * Debugger for Chrome (msjsdiag.debugger-for-chrome)
 * Typescript TsLint Plugin (ms-vscode.vscode-typescript-tslint-plugin)
 * Go (ms-vscode.go)
-* Docker (peterjausovec.vscode-docker)
+* Docker (ms-azuretools.vscode-docker)
 * Open in Github (fabiospampinato.vscode-open-in-github)
 * Better TOML (bungcip.better-toml)
 * Editor Config (editorconfig.editorconfig)
+* Code Spell Checker (streetsidesoftware.code-spell-checker)
+* Markdownlint (davidanson.vscode-markdownlint)
 
 ### [Customize Keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)
 
